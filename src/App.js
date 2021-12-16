@@ -1,11 +1,22 @@
+import React from "react";
+import MovieList from "./components/MovieList";
+import Navbar from "./components/Navbar";
+import { MovieProvider } from "./contexts/MovieContext";
+import { UserProvider } from "./contexts/UseContext";
+
 
 
 function App() {
+  
+
   return (
     <div>
-      <h1>
-        App Lista
-      </h1>
+      <UserProvider>
+        <MovieProvider>
+          <Navbar />
+          <MovieList />
+        </MovieProvider>
+      </UserProvider>
     </div>
   );
 }
